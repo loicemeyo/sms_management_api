@@ -2,12 +2,12 @@ const HttpStatus = require('http-status')
 const swaggerUi = require('swagger-ui-express');
 
 const swaggerDocument = require('../../swagger.json');
-const messageRoutes = require('./messages')
-const contactRoutes = require('./contacts')
+const messages = require('./messages')
+const contacts = require('./contacts')
 
 const routes = app => {
-  app.use('/sms', messageRoutes)
-  app.use('/contacts', contactRoutes)
+  app.use('/sms', messages)
+  app.use('/contacts', contacts)
   app.get('/', (req, res) => res.status(HttpStatus.OK).json({message : 'welcome to SMS API, visit /api-docs on your browser for documentation'}))
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   //any route apart from the above defined

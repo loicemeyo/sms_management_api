@@ -18,8 +18,8 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'contacts',
     });
     Contact.associate = (models) => {
-      Contact.hasMany(models.Sms,{onDelete:'CASCADE',foreignKey:'senderId',hooks:true})
-      Contact.hasMany(models.Sms,{onDelete:'CASCADE',foreignKey:'receiverId',hooks:true})
+      Contact.hasMany(models.Message,{onDelete:'CASCADE',foreignKey:'senderId',hooks:true})
+      Contact.hasMany(models.Message,{onDelete:'CASCADE',foreignKey:'receiverId',hooks:true})
     };
     return Contact;
   };

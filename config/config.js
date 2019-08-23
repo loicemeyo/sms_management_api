@@ -10,7 +10,6 @@ const envVarsSchema = joi.object({
   TEST_DB: joi.string().default('sms_test_db'),
   DATABASE_DIALECT: joi.string().default('postgres'),
   DATABASE_PASSWORD: joi.string().default(null),
-  DATABASE_USER: joi.string().default('root'),
   HOST: joi.string().default('localhost'),
   DATABASE_URL: joi.string().default(null),
   DATABASE_PORT: joi.string().default(5432)
@@ -30,7 +29,6 @@ const config = {
   port: envVars.PORT,
   dbName: envVars.DATABASE,
   testDbName: envVars.TEST_DB,
-  dbUsername: envVars.DATABASE_USER,
   databaseDialect: envVars.DATABASE_DIALECT,
   dbPassword: envVars.password,
   host: envVars.HOST,
